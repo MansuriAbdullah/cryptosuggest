@@ -41,6 +41,10 @@ app.get('/api/health', (req, res) => {
     res.json({ success: true, message: 'CryptoSuggest API is running', timestamp: new Date().toISOString() });
 });
 
+app.get('/', (req, res) => {
+    res.json({ success: true, message: 'Welcome to the CryptoSuggest API backend!' });
+});
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/websites', websiteRoutes);
@@ -65,6 +69,11 @@ app.use((err, req, res, next) => {
 });
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`🚀 Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+    });
+}
+
+// Export for Vercel
+export default app;
