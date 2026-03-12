@@ -1,0 +1,107 @@
+﻿
+> cryptosugggest@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 2205 modules transformed.
+node.exe : [31mΓ£ù[39m 
+Build failed in 9.74s
+At line:1 char:1
++ & "C:\Program 
+Files\nodejs/node.exe" 
+"C:\Program 
+Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo           
+   : NotSpecified: ([31mΓ£  
+  ù[39m Build failed in 9   
+ .74s:String) [], RemoteE    
+xception
+    + FullyQualifiedErrorId  
+   : NativeCommandError
+ 
+[31merror during build:
+[31msrc/pages/auth/Profile.j
+sx (3:59): "Bookmarks" is 
+not exported by "node_modules
+/lucide-react/dist/esm/lucide
+-react.js", imported by "src/
+pages/auth/Profile.jsx".[31m
+file: [36mC:/Users/DELL/Desk
+top/CrptoSuggest-main/fronten
+d/src/pages/auth/Profile.jsx:
+3:59[31m
+[33m
+1: import React from 'react';
+2: import { useAuth } from 
+'../../contexts/AuthContext';
+3: import { User, Mail, 
+Shield, Calendar, LogOut, 
+ArrowRight, Bookmarks, 
+FileText } from 
+'lucide-react';
+                             
+                             
+    ^
+4: import { motion } from 
+'framer-motion';
+5: import { Link } from 
+'react-router-dom';
+[31m
+    at getRollupError (file:/
+//C:/Users/DELL/Desktop/Crpto
+Suggest-main/frontend/node_mo
+dules/rollup/dist/es/shared/p
+arseAst.js:401:41)
+    at error (file:///C:/User
+s/DELL/Desktop/CrptoSuggest-m
+ain/frontend/node_modules/rol
+lup/dist/es/shared/parseAst.j
+s:397:42)
+    at Module.error (file:///
+C:/Users/DELL/Desktop/CrptoSu
+ggest-main/frontend/node_modu
+les/rollup/dist/es/shared/nod
+e-entry.js:17022:16)
+    at Module.traceVariable (
+file:///C:/Users/DELL/Desktop
+/CrptoSuggest-main/frontend/n
+ode_modules/rollup/dist/es/sh
+ared/node-entry.js:17478:29)
+    at 
+ModuleScope.findVariable (fil
+e:///C:/Users/DELL/Desktop/Cr
+ptoSuggest-main/frontend/node
+_modules/rollup/dist/es/share
+d/node-entry.js:15141:39)
+    at ReturnValueScope.findV
+ariable (file:///C:/Users/DEL
+L/Desktop/CrptoSuggest-main/f
+rontend/node_modules/rollup/d
+ist/es/shared/node-entry.js:5
+688:38)
+    at FunctionBodyScope.find
+Variable (file:///C:/Users/DE
+LL/Desktop/CrptoSuggest-main/
+frontend/node_modules/rollup/
+dist/es/shared/node-entry.js:
+5688:38)
+    at Identifier.bind (file:
+///C:/Users/DELL/Desktop/Crpt
+oSuggest-main/frontend/node_m
+odules/rollup/dist/es/shared/
+node-entry.js:5462:40)
+    at Property.bind (file://
+/C:/Users/DELL/Desktop/CrptoS
+uggest-main/frontend/node_mod
+ules/rollup/dist/es/shared/no
+de-entry.js:2829:23)
+    at ObjectExpression.bind 
+(file:///C:/Users/DELL/Deskto
+p/CrptoSuggest-main/frontend/
+node_modules/rollup/dist/es/s
+hared/node-entry.js:2825:28)
+[39m

@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-white text-text-main font-sans antialiased;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-heading font-bold;
+        letter-spacing: -0.02em;
+        line-height: 1.2;
+    }
+
+    h1 {
+        @apply text-4xl md:text-5xl lg:text-6xl;
+        font-weight: 800;
+    }
+
+    h2 {
+        @apply text-3xl md:text-4xl lg:text-5xl;
+        font-weight: 700;
+    }
+
+    h3 {
+        @apply text-2xl md:text-3xl lg:text-4xl;
+        font-weight: 700;
+    }
+
+    h4 {
+        @apply text-xl md:text-2xl;
+        font-weight: 600;
+    }
+
+    p {
+        line-height: 1.7;
+        letter-spacing: 0.01em;
+    }
+}
+
+@layer components {
+    .container-custom {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    .btn {
+        @apply px-8 py-4 rounded-xl font-semibold transition-all duration-300 inline-flex items-center justify-center gap-2;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-primary {
+        @apply bg-gradient-to-r from-primary to-primary-dark text-white;
+        box-shadow: 0 8px 20px rgba(31, 143, 229, 0.3);
+    }
+
+    .btn-primary:hover {
+        @apply shadow-2xl;
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 12px 28px rgba(31, 143, 229, 0.4);
+    }
+
+    .btn-secondary {
+        @apply bg-gradient-to-r from-accent to-accent/90 text-white;
+        box-shadow: 0 8px 20px rgba(255, 107, 107, 0.3);
+    }
+
+    .btn-secondary:hover {
+        @apply shadow-2xl;
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 12px 28px rgba(255, 107, 107, 0.4);
+    }
+
+    .btn-outline {
+        @apply border-2 border-primary text-primary bg-white;
+    }
+
+    .btn-outline:hover {
+        @apply bg-primary text-white;
+        transform: translateY(-2px);
+    }
+
+    .card {
+        @apply bg-white rounded-2xl shadow-lg p-8 transition-all duration-300;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .card-hover {
+        @apply hover:shadow-2xl;
+    }
+
+    .card-hover:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    }
+
+    .badge {
+        @apply px-4 py-2 rounded-full text-sm font-semibold inline-flex items-center gap-2;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .badge-verified {
+        @apply bg-gradient-to-r from-green-50 to-green-100 text-green-700;
+        border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .badge-category {
+        @apply bg-gradient-to-r from-primary/10 to-primary/5 text-primary;
+        border: 1px solid rgba(31, 143, 229, 0.2);
+    }
+
+    .badge-featured {
+        @apply bg-gradient-to-r from-accent/10 to-accent/5 text-accent;
+        border: 1px solid rgba(255, 107, 107, 0.2);
+    }
+}
+
+@layer utilities {
+
+    /* Responsive Touch Targets - Minimum 44x44px for accessibility */
+    .touch-target {
+        @apply min-w-[44px] min-h-[44px];
+    }
+
+    .touch-target-lg {
+        @apply min-w-[56px] min-h-[56px];
+    }
+
+    /* Responsive Text Utilities */
+    .text-responsive-xs {
+        @apply text-xs sm:text-sm;
+    }
+
+    .text-responsive-sm {
+        @apply text-sm sm:text-base;
+    }
+
+    .text-responsive-base {
+        @apply text-base sm:text-lg;
+    }
+
+    .text-responsive-lg {
+        @apply text-lg sm:text-xl lg:text-2xl;
+    }
+
+    .text-responsive-xl {
+        @apply text-xl sm:text-2xl lg:text-3xl;
+    }
+
+    .text-responsive-2xl {
+        @apply text-2xl sm:text-3xl lg:text-4xl;
+    }
+
+    .text-responsive-3xl {
+        @apply text-3xl sm:text-4xl lg:text-5xl xl:text-6xl;
+    }
+
+    /* Responsive Spacing */
+    .section-padding {
+        @apply py-12 sm:py-16 lg:py-24;
+    }
+
+    .section-padding-sm {
+        @apply py-8 sm:py-12 lg:py-16;
+    }
+
+    .container-padding {
+        @apply px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Gradient backgrounds */
+    .bg-gradient-primary {
+        @apply bg-gradient-to-r from-primary to-primary-dark;
+    }
+
+    .bg-gradient-accent {
+        @apply bg-gradient-to-r from-accent to-primary;
+    }
+
+    .bg-gradient-soft {
+        @apply bg-gradient-to-br from-background-soft to-white;
+    }
+
+    /* Zebra-stripe pattern for sections */
+    .zebra-sections>section:nth-child(odd) {
+        @apply bg-white;
+    }
+
+    .zebra-sections>section:nth-child(even) {
+        @apply bg-gradient-to-br from-primary to-primary-dark text-white;
+    }
+
+    /* White text for headings and content in blue sections */
+    .zebra-sections>section:nth-child(even) h1,
+    .zebra-sections>section:nth-child(even) h2,
+    .zebra-sections>section:nth-child(even) h3,
+    .zebra-sections>section:nth-child(even) h4,
+    .zebra-sections>section:nth-child(even) h5,
+    .zebra-sections>section:nth-child(even) h6,
+    .zebra-sections>section:nth-child(even) p,
+    .zebra-sections>section:nth-child(even) span {
+        @apply text-white;
+    }
+
+    .zebra-sections>section:nth-child(even) .text-text-muted {
+        @apply text-white/90;
+    }
+
+    /* Cards in blue sections - solid white backgrounds with dark text */
+    .zebra-sections>section:nth-child(even) .card,
+    .zebra-sections>section:nth-child(even) [class*="bg-white"],
+    .zebra-sections>section:nth-child(even) [class*="Card"] {
+        @apply bg-white text-text-main shadow-lg;
+    }
+
+    /* Card content text colors - dark text on white cards */
+    .zebra-sections>section:nth-child(even) .card h3,
+    .zebra-sections>section:nth-child(even) .card h4,
+    .zebra-sections>section:nth-child(even) .card h5,
+    .zebra-sections>section:nth-child(even) .card p,
+    .zebra-sections>section:nth-child(even) .card span {
+        @apply text-text-main;
+    }
+
+    /* Button styling in blue sections - keep white/transparent for section-level buttons */
+    .zebra-sections>section:nth-child(even)>div>button,
+    .zebra-sections>section:nth-child(even)>div>.btn {
+        @apply bg-white/20 text-white border-white/30 hover:bg-white/30;
+    }
+
+    /* Buttons inside cards - primary color */
+    .zebra-sections>section:nth-child(even) .card button,
+    .zebra-sections>section:nth-child(even) .card .btn {
+        @apply bg-primary text-white hover:bg-primary-dark;
+    }
+
+    /* Icon backgrounds in cards - use primary color */
+    .zebra-sections>section:nth-child(even) .card [class*="bg-primary"],
+    .zebra-sections>section:nth-child(even) .card [class*="bg-accent"] {
+        @apply bg-primary/10 text-primary;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1F8FE5;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #0B3C5D;
+}
+
+/* Premium Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes pulseSlow {
+
+    0%,
+    100% {
+        opacity: 0.6;
+    }
+
+    50% {
+        opacity: 0.8;
+    }
+}
+
+@keyframes bounceSlow {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes spinSlow {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-float-slow {
+    animation: float 8s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+    animation: pulseSlow 4s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+    animation: bounceSlow 3s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+    animation: spinSlow 20s linear infinite;
+}
+
+/* Gradient text */
+.text-gradient {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+}
